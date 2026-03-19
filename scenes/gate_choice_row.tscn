@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/gate.tscn" id="1_gate"]
+[ext_resource type="Script" path="res://scripts/gate_choice_row.gd" id="2_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_divider"]
+size = Vector3(0.8, 4.0, 5.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_divider"]
+size = Vector3(0.8, 4.0, 5.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_divider"]
+albedo_color = Color(0.12, 0.12, 0.14, 1)
+roughness = 1.0
+
+[node name="GateChoiceRow" type="Node3D"]
+script = ExtResource("2_script")
+
+[node name="GateLeft" parent="." instance=ExtResource("1_gate")]
+
+[node name="GateCenter" parent="." instance=ExtResource("1_gate")]
+
+[node name="GateRight" parent="." instance=ExtResource("1_gate")]
+
+[node name="DividerA" type="StaticBody3D" parent="."]
+position = Vector3(0, 2.0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DividerA"]
+shape = SubResource("BoxShape3D_divider")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DividerA"]
+mesh = SubResource("BoxMesh_divider")
+material_override = SubResource("StandardMaterial3D_divider")
+
+[node name="DividerB" type="StaticBody3D" parent="."]
+position = Vector3(2.0, 2.0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DividerB"]
+shape = SubResource("BoxShape3D_divider")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DividerB"]
+mesh = SubResource("BoxMesh_divider")
+material_override = SubResource("StandardMaterial3D_divider")
