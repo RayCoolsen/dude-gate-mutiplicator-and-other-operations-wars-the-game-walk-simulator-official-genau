@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_gate_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trigger"]
+size = Vector3(3.6, 3, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_post"]
+size = Vector3(0.4, 3, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_top"]
+size = Vector3(3.4, 0.4, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gate"]
+albedo_color = Color(0.2, 0.9, 0.35, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_text"]
+albedo_color = Color(1, 1, 1, 1)
+shading_mode = 0
+
+[node name="Gate" type="Area3D"]
+script = ExtResource("1_gate_script")
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 1.5, 0)
+shape = SubResource("BoxShape3D_trigger")
+
+[node name="LeftPost" type="MeshInstance3D" parent="."]
+position = Vector3(-1.5, 1.5, 0)
+mesh = SubResource("BoxMesh_post")
+material_override = SubResource("StandardMaterial3D_gate")
+
+[node name="RightPost" type="MeshInstance3D" parent="."]
+position = Vector3(1.5, 1.5, 0)
+mesh = SubResource("BoxMesh_post")
+material_override = SubResource("StandardMaterial3D_gate")
+
+[node name="TopBar" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.0, 0)
+mesh = SubResource("BoxMesh_top")
+material_override = SubResource("StandardMaterial3D_gate")
+
+[node name="Label3D" type="Label3D" parent="."]
+position = Vector3(0, 2.1, 0)
+text = "+10"
+font_size = 96
+modulate = Color(1, 1, 1, 1)
+billboard = 1
