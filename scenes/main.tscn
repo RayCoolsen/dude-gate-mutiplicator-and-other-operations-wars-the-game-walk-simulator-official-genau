@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://08nbcqhbgsiq"]
 
 [ext_resource type="PackedScene" path="res://scenes/level_01.tscn" id="1_level"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scenes/follow_camera.tscn" id="3_camera"]
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=550763520]
 
-[node name="Level" parent="." instance=ExtResource("1_level")]
+[node name="Level" parent="." unique_id=1211056225 instance=ExtResource("1_level")]
 
-[node name="Player" parent="." instance=ExtResource("2_player")]
-position = Vector3(0, 0, 0)
+[node name="Player" parent="." unique_id=1018109061 instance=ExtResource("2_player")]
 
-[node name="FollowCamera" parent="." instance=ExtResource("3_camera")]
+[node name="FollowCamera" parent="." unique_id=300152023 instance=ExtResource("3_camera")]
 target_path = NodePath("../Player")

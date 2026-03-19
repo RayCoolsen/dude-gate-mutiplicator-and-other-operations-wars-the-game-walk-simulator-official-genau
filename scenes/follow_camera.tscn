@@ -6,4 +6,6 @@
 script = ExtResource("1_script")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 8, 14)
+rotation = Vector3(-0.45, 0, 0)
 current = true
