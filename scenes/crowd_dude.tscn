@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_crowd"]
+radius = 0.4
+mid_height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crowd"]
+albedo_color = Color(1, 1, 1, 1)
+roughness = 0.8
+
+[node name="CrowdDude" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1, 0)
+mesh = SubResource("CapsuleMesh_crowd")
+material_override = SubResource("StandardMaterial3D_crowd")

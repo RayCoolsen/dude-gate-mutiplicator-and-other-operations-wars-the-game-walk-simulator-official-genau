@@ -21,6 +21,8 @@ script = ExtResource("1_script")
 position = Vector3(0, 1, 0)
 shape = SubResource("CapsuleShape3D_player")
 
+[node name="CrowdRoot" type="Node3D" parent="."]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 position = Vector3(0, 1, 0)
 mesh = SubResource("CapsuleMesh_player")
