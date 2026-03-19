@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://scripts/gate.gd" id="1_gate_script"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trigger"]
-size = Vector3(3.2, 4.5, 5.0)
+size = Vector3(3.4, 4.8, 5.4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_post"]
 size = Vector3(0.5, 4.0, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_top"]
-size = Vector3(3.4, 0.5, 0.5)
+size = Vector3(3.6, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sign"]
-size = Vector3(3.0, 1.6, 0.2)
+size = Vector3(3.6, 2.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gate"]
 albedo_color = Color(0.2, 0.9, 0.35, 1)
@@ -28,16 +28,16 @@ monitoring = true
 monitorable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-position = Vector3(0, 2.25, 0)
+position = Vector3(0, 2.4, 0)
 shape = SubResource("BoxShape3D_trigger")
 
 [node name="LeftPost" type="MeshInstance3D" parent="."]
-position = Vector3(-1.35, 2.0, 0)
+position = Vector3(-1.45, 2.0, 0)
 mesh = SubResource("BoxMesh_post")
 material_override = SubResource("StandardMaterial3D_gate")
 
 [node name="RightPost" type="MeshInstance3D" parent="."]
-position = Vector3(1.35, 2.0, 0)
+position = Vector3(1.45, 2.0, 0)
 mesh = SubResource("BoxMesh_post")
 material_override = SubResource("StandardMaterial3D_gate")
 
@@ -47,13 +47,13 @@ mesh = SubResource("BoxMesh_top")
 material_override = SubResource("StandardMaterial3D_gate")
 
 [node name="SignBoard" type="MeshInstance3D" parent="."]
-position = Vector3(0, 2.6, 0.18)
+position = Vector3(0, 2.55, 0.15)
 mesh = SubResource("BoxMesh_sign")
 material_override = SubResource("StandardMaterial3D_sign")
 
 [node name="Label3D" type="Label3D" parent="."]
-position = Vector3(0, 2.55, 0.31)
+position = Vector3(0, 2.55, 0.48)
 text = "+10"
-font_size = 160
+font_size = 120
 modulate = Color(1, 1, 1, 1)
-billboard = 1
+billboard = 0

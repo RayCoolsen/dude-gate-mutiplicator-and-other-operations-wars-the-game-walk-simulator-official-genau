@@ -13,8 +13,14 @@ var used: bool = false
 @onready var sign_board: MeshInstance3D = $SignBoard
 
 func _ready() -> void:
+	_prepare_label()
 	body_entered.connect(_on_body_entered)
 	_update_visuals()
+
+func _prepare_label() -> void:
+	label_3d.billboard = BaseMaterial3D.BILLBOARD_DISABLED
+	label_3d.position = Vector3(0, 2.55, 0.48)
+	label_3d.font_size = 120
 
 func set_gate_data(new_operation: String, new_value: int) -> void:
 	operation = new_operation

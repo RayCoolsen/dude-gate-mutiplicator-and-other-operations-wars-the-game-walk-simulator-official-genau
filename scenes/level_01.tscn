@@ -63,3 +63,39 @@ left_operation = "add"
 left_value = 10
 right_operation = "mul"
 right_value = 2
+
+[node name="ChoiceRow02" parent="." instance=ExtResource("1_gate_row")]
+position = Vector3(0, 0, -95)
+lane_count = 3
+left_operation = "sub"
+left_value = 3
+center_operation = "add"
+center_value = 8
+right_operation = "mul"
+right_value = 2
+
+[node name="ChoiceRow03" parent="." instance=ExtResource("1_gate_row")]
+position = Vector3(0, 0, -140)
+lane_count = 2
+left_operation = "add"
+left_value = 20
+right_operation = "div"
+right_value = 2
+
+[node name="ChoiceRow04" parent="." instance=ExtResource("1_gate_row")]
+position = Vector3(0, 0, -185)
+lane_count = 3
+left_operation = "mul"
+left_value = 2
+center_operation = "add"
+center_value = 12
+right_operation = "sub"
+right_value = 5
+
+[node name="ChoiceRow05" parent="." instance=ExtResource("1_gate_row")]
+position = Vector3(0, 0, -230)
+lane_count = 2
+left_operation = "add"
+left_value = 15
+right_operation = "mul"
+right_value = 3
