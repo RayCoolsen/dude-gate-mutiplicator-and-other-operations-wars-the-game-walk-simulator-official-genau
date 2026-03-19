@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(8, 0.5, 120)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground"]
+size = Vector3(8, 0.5, 120)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+size = Vector3(1, 2, 120)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall"]
+size = Vector3(1, 2, 120)
+
+[node name="Level_01" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.25, 60)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ground")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ground")
+
+[node name="LeftWall" type="StaticBody3D" parent="."]
+position = Vector3(-4.5, 1, 60)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall"]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall"]
+mesh = SubResource("BoxMesh_wall")
+
+[node name="RightWall" type="StaticBody3D" parent="."]
+position = Vector3(4.5, 1, 60)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall"]
+mesh = SubResource("BoxMesh_wall")
+
+[node name="Light" type="OmniLight3D" parent="."]
+position = Vector3(0, 8, 60)
+light_energy = 2.0
+omni_range = 200.0
